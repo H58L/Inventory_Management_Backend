@@ -331,3 +331,6 @@ private Timestamp updatedAt;
   </tr>
 </table>
 
+<br><br>
+<code>A DTO is a simple object used to transfer data between layers without exposing internal entity structure</code>
+
