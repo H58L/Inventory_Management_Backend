@@ -1,2 +1,5 @@
-package in.lisa.billingSoftware.io;public class CategoryRequest {
+package in.lisa.billingSoftware.io;
+
+public class CategoryRequest {
+
 }

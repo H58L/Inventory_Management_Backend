@@ -1,2 +1,4 @@
-package in.lisa.billingSoftware.io;public class CatgoryResponse {
+package in.lisa.billingSoftware.io;
+
+public class CategoryResponse {
 }

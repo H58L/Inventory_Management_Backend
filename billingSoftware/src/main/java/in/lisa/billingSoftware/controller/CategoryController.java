@@ -1,2 +1,4 @@
-package in.lisa.billingSoftware.controller;public class CategoryCOntroller {
+package in.lisa.billingSoftware.controller;
+
+public class CategoryController {
 }
