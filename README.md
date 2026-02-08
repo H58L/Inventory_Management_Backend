@@ -334,3 +334,154 @@ private Timestamp updatedAt;
 <br><br>
 <code>A DTO is a simple object used to transfer data between layers without exposing internal entity structure</code>
 
+<div>
+<h3>@RestController </h3>
+@RestController = @Controller + @ResponseBody
+
+👉 It tells Spring that:
+
+this class will handle HTTP requests
+
+and return data (JSON/XML) instead of views (HTML/JSP)
+
+🔹 @Controller
+
+Marks the class as a Spring MVC controller
+
+Handles incoming HTTP requests
+
+🔹 @ResponseBody
+
+Converts return values directly into JSON/XML
+
+Uses Jackson internally to serialize objects
+</div>
+<div>
+<h3>
+@RequestMapping
+</h3>
+@RequestMapping is a Spring MVC annotation used to map HTTP requests to controller classes or methods.
+@RequestMapping maps HTTP requests to controller methods and defines URL paths and HTTP methods.
+</div>
+
+<div>
+<h3>@PostMapping</h3>
+What is @PostMapping?
+
+@PostMapping is a Spring MVC annotation used to handle HTTP POST requests.
+
+👉 It is mainly used to create new resources on the server.
+</div>
+
+<div>
+<h3>@RequestBody</h3>
+@RequestBody is a Spring MVC annotation used to bind the HTTP request body to a Java object.
+
+👉 In simple terms:
+It converts incoming JSON into a Java object automatically.
+
+Important Rules ⚠️
+
+Used mainly with POST, PUT, PATCH
+
+GET requests should not use @RequestBody
+
+Field names in JSON must match Java fields
+</div>
+
+<div>
+<h3>
+@ResponseBody
+@ResponseBody tells Spring to return data directly in the HTTP response instead of resolving a view.
+</h3>
+<br> <br>
+<hr>
+<div>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>@RequestBody</th>
+      <th>@ResponseBody</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Direction</td>
+      <td>Client → Server</td>
+      <td>Server → Client</td>
+    </tr>
+    <tr>
+      <td>Works on</td>
+      <td>Method parameter</td>
+      <td>Method return value</td>
+    </tr>
+    <tr>
+      <td>Converts</td>
+      <td>JSON → Java</td>
+      <td>Java → JSON</td>
+    </tr>
+    <tr>
+      <td>Uses Jackson</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Common HTTP methods</td>
+      <td>POST, PUT, PATCH</td>
+      <td>GET, POST, PUT</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+</div>
+
+<div>
+<h3>@RestCOntroller v/s @Controller</h3>
+
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>@Controller</th>
+      <th>@RestController</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Purpose</td>
+      <td>Used for Spring MVC applications</td>
+      <td>Used for building REST APIs</td>
+    </tr>
+    <tr>
+      <td>Returns</td>
+      <td>View name (HTML, JSP, Thymeleaf)</td>
+      <td>Data (JSON / XML)</td>
+    </tr>
+    <tr>
+      <td>@ResponseBody needed?</td>
+      <td>Yes, for returning JSON</td>
+      <td>No (included by default)</td>
+    </tr>
+    <tr>
+      <td>Internal composition</td>
+      <td>@Controller</td>
+      <td>@Controller + @ResponseBody</td>
+    </tr>
+    <tr>
+      <td>View Resolver</td>
+      <td>Used</td>
+      <td>Skipped</td>
+    </tr>
+    <tr>
+      <td>Common usage</td>
+      <td>Web applications (MVC)</td>
+      <td>RESTful backend services</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
