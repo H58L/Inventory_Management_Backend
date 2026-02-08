@@ -485,3 +485,140 @@ Field names in JSON must match Java fields
 </table>
 
 </div>
+<div>
+<h3>
+@Service
+</h3>
+Marks a class as a Service layer component
+
+Tells Spring to manage this class as a Bean
+
+Used to hold business logic
+
+Why it’s used:
+
+Separates business logic from controllers and repositories
+
+Improves readability, testability, and layering
+</div>
+
+<h2>@Service &amp; @RequiredArgsConstructor (Spring Boot + Lombok)</h2>
+
+<h3>What is a Bean?</h3>
+<p>
+A <strong>Bean</strong> is an object that is
+<strong>created, managed, and controlled by the Spring container</strong>.
+Instead of creating objects manually using <code>new</code>,
+Spring handles object creation and lifecycle.
+</p>
+
+<pre>
+@Service
+public class CategoryService {
+}
+</pre>
+
+<p>
+The <code>CategoryService</code> class becomes a
+<strong>Spring Bean</strong>.
+</p>
+
+<hr/>
+
+<h3>What is Dependency Injection (DI)?</h3>
+<p>
+<strong>Dependency Injection</strong> is a design pattern where a class
+receives its dependencies from Spring instead of creating them itself.
+</p>
+<ul>
+  <li>Promotes loose coupling</li>
+  <li>Improves testability</li>
+  <li>Improves maintainability</li>
+</ul>
+
+<hr/>
+
+<h3>@Service</h3>
+<p>
+The <code>@Service</code> annotation marks a class as a
+<strong>Service-layer Spring Bean</strong>.
+</p>
+<ul>
+  <li>Registers the class in Spring’s Application Context</li>
+  <li>Used to store business logic</li>
+  <li>Enables dependency injection</li>
+</ul>
+
+<pre>
+@Service
+public class CategoryService {
+    // business logic
+}
+</pre>
+
+<hr/>
+
+<h3>@RequiredArgsConstructor (Lombok)</h3>
+<p>
+The <code>@RequiredArgsConstructor</code> annotation automatically generates
+a constructor for all <code>final</code> fields.
+</p>
+<ul>
+  <li>Enables constructor-based dependency injection</li>
+  <li>Removes boilerplate constructor code</li>
+  <li>Encourages immutability</li>
+</ul>
+
+<pre>
+@Service
+@RequiredArgsConstructor
+public class CategoryService {
+
+    private final CategoryRepository categoryRepository;
+}
+</pre>
+
+<p>
+Lombok generates the following constructor:
+</p>
+
+<pre>
+public CategoryService(CategoryRepository categoryRepository) {
+    this.categoryRepository = categoryRepository;
+}
+</pre>
+
+<p>
+Spring uses this constructor to
+<strong>inject the dependency</strong>.
+</p>
+
+<hr/>
+
+<h3>Why Use @Service with @RequiredArgsConstructor?</h3>
+<ul>
+  <li><code>@Service</code> creates a Spring-managed Bean</li>
+  <li><code>@RequiredArgsConstructor</code> injects required dependencies cleanly</li>
+  <li>This approach follows Spring Boot best practices</li>
+</ul>
+
+<hr/>
+
+<h3>Summary</h3>
+<ul>
+  <li><strong>Bean</strong>: Spring-managed object</li>
+  <li><strong>Dependency Injection</strong>: Dependencies provided by Spring</li>
+  <li><strong>@Service</strong>: Marks the business logic layer</li>
+  <li><strong>@RequiredArgsConstructor</strong>: Enables constructor-based dependency injection</li>
+</ul>
+
+<hr/>
+
+<h3>Interview One-Liner</h3>
+<p>
+<em>
+@Service creates a Spring-managed service Bean, and @RequiredArgsConstructor
+enables constructor-based dependency injection without boilerplate code.
+</em>
+</p>
+
