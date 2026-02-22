@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/categories")
 //@RequiredArgsConstructor //Without this would have to add constructurs for CategoryService to be injected in this file
@@ -29,6 +31,13 @@ public class CategoryController {
 
 
         return categoryService.addCategory(request);
+    }
+
+    @GetMapping
+    @ResponseStatus
+    public List<CategoryResponse> fetchCategories()
+    {
+        return categoryService.read();
     }
 
 }

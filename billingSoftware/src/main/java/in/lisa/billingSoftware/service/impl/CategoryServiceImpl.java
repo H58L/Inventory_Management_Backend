@@ -9,7 +9,9 @@ import in.lisa.billingSoftware.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Stream.builder;
 
@@ -68,4 +70,19 @@ public class CategoryServiceImpl implements CategoryService {
 
     }
 
+    @Override // instructs the compiler that a method is intended to override a method in a superclass or implement one from an interface
+    //You basically created a transformation layer:
+    //
+    //Database → Entity → DTO → API Response
+    public List<CategoryResponse> read()
+    {
+        return categoryRepository.findAll()
+                .stream()
+                .map(categoryEntity -> convertToResponse(categoryEntity))
+                .collect(Collectors.toList());
+    }
+
 }
+//YES 👏 exactly.
+//
+//Java Streams are basically a map → filter → reduce → transform pipeline.
