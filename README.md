@@ -622,3 +622,50 @@ enables constructor-based dependency injection without boilerplate code.
 </em>
 </p>
 
+<div>
+@ResponseStatus
+@ResponseStatus → controls HTTP status code
+
+HttpStatus.CREATED → 201
+
+Used for successful POST / create operations
+
+Improves REST API correctness & clarity
+
+
+</div>
+
+<div>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>@ResponseStatus</th>
+      <th>ResponseEntity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Simplicity</td>
+      <td>✅ Very simple</td>
+      <td>❌ More code</td>
+    </tr>
+    <tr>
+      <td>Dynamic status</td>
+      <td>❌ No</td>
+      <td>✅ Yes</td>
+    </tr>
+    <tr>
+      <td>Custom headers</td>
+      <td>❌ No</td>
+      <td>✅ Yes</td>
+    </tr>
+    <tr>
+      <td>Best for</td>
+      <td>Basic APIs</td>
+      <td>Complex APIs</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
